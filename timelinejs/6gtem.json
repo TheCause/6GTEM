@@ -1,7 +1,7 @@
 {
   "title": {
     "media": {
-      "url": "6gtem.fr/media/images/la-soiree-electorale-de-france-2.jpeg",
+      "url": "media/images/la-soiree-electorale-de-france-2.jpeg",
       "caption": "",
       "credit": "france2.fr"
     },
@@ -13,7 +13,7 @@
   "events": [
     {
       "media": {
-        "url": "6gtem.fr/media/images/la-soiree-electorale-de-france-2.jpeg",
+        "url": "media/images/la-soiree-electorale-de-france-2.jpeg",
         "caption": "résultat",
         "credit": "france2.fr",
         "thumb": ""
