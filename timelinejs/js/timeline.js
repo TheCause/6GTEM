@@ -13750,7 +13750,7 @@ TL.Timeline = TL.Class.extend({
 		this.fire("dataloaded");
 		this._initLayout();
 		this._initEvents();
-		this._initAnalytics();
+		//this._initAnalytics();
 		if (this.message) {
 			this.message.hide();
 		}
