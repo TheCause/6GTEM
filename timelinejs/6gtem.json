@@ -29,10 +29,8 @@
         "headline": "Résultat à 20:00",
         "text": "<p>E.M. Élu 8ème président de la V République</p>"
       }
-    }
-  ],
-  "events": [
-  {
+    },
+      {
     "text": {
       "headline": "Annonce de la nomination du premier Ministre",
       "text": "<p>Annonce de la nomination du premier Ministre : Edouard Philippe</p>"
@@ -51,5 +49,5 @@
       "second": "00"
       }
     }
-  ],
+  ]
 }
