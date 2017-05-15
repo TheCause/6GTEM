@@ -30,11 +30,7 @@
         "text": "<p>E.M. Élu 8ème président de la V République</p>"
       }
     },
-      {
-    "text": {
-      "headline": "Annonce de la nomination du premier Ministre",
-      "text": "<p>Annonce de la nomination du premier Ministre : Edouard Philippe</p>"
-    },
+    {
     "media": {
       "url": "http://media.rtl.fr/cache/miRSiisJAy1W-KwRVp4mMA/880v587-0/online/image/2017/0515/7788544848_alexis-kohler-dans-la-cour-de-l-elysee.jpg",
       "caption": "",
@@ -47,7 +43,11 @@
       "hour": "14",
       "minute": "43",
       "second": "00"
-      }
+      },
+    "text": {
+      "headline": "Annonce de la nomination du premier Ministre",
+      "text": "<p>Annonce de la nomination du premier Ministre : Edouard Philippe</p>"
+    },
     }
   ]
 }
