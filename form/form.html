@@ -21,22 +21,14 @@
 
 
         <input type="hidden" name="events"/>
-        <input type="hidden" name="events.text"/>
-        <label for="headline">titre</label>
-        <input type="text" id="headline" name="events.text.headline" value=""/><br/>
-        <label for="text">description</label>
-        <input type="text" id="text" name="events.text.text" value="<p></p>"/><br/>
-
         <input type="hidden" name="events.media"/>
         <label for="url">url</label>
         <input type="text" id="url" name="events.media.url" value=""/><br/>
-
         <label for="caption">caption</label>
         <input type="text" id="caption" name="events.media.caption" value=""/><br/>
-        
         <label for="credit">credit</label>
         <input type="text" id="credit" name="events.media.credit" value=""/><br/>
-        
+
         <input type="hidden" name="events.start_date"/>
         <label for="month">mois</label>
         <input type="text" id="month" name="events.start_date.month" value="05"/><br/>
@@ -50,6 +42,15 @@
         <input type="text" id="minute" name="events.start_date.minute" value="00"/><br/>
         <label for="second">seconde</label>
         <input type="text" id="second" name="events.start_date.second" value="00"/> <br/>   
+
+        <input type="hidden" name="events.text"/>
+        <label for="headline">titre</label>
+        <input type="text" id="headline" name="events.text.headline" value=""/><br/>
+        <label for="text">description</label>
+        <input type="text" id="text" name="events.text.text" value="<p></p>"/><br/>
+
+
+        
         <input type="submit" value="SUBMIT" />
     </form>
 </body>
