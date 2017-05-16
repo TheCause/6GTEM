@@ -12,23 +12,15 @@
   },
   "events": [
     {
-      "media": {
-        "url": "media/images/la-soiree-electorale-de-france-2.jpeg",
-        "caption": "résultat",
-        "credit": "france2.fr"
-      },
-      "start_date": {
-        "month": "05",
-        "day": "07",
-        "year": "2017",
-        "hour": "20",
-        "minute": "00",
-        "second": "00"
-      },
-      "text": {
-        "headline": "Résultat à 20:00",
-        "text": "<p>E.M. Élu 8ème président de la V République</p>"
-      }
+      "media": {"url": "media/images/la-soiree-electorale-de-france-2.jpeg","caption": "résultat","credit": "france2.fr"},
+      "start_date": {"month": "05","day": "07","year": "2017","hour": "20","minute": "00","second": "00"},
+      "text": {"headline": "Résultat à 20:00","text": "<p>E.M. Élu 8ème président de la V République</p>"}
+    },
+    {
+      "media": {"url": "http://media.rtl.fr/cache/miRSiisJAy1W-KwRVp4mMA/880v587-0/online/image/2017/0515/7788544848_alexis-kohler-dans-la-cour-de-l-elysee.jpg","caption": "nomination","credit": "Crédit Image : STEPHANE DE SAKUTIN / AFP | Crédit Média : RTLnet "},
+      "start_date": {"month": "05","day": "15","year": "2017","hour": "00","minute": "00","second": "00"},
+      "text": {"headline": "Nomination du premier Ministre","text": "<p>Annonce de la nomination du premier Ministre : Edouard Philippe</p>"}
+      
     }
   ]
 }
