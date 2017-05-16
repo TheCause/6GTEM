@@ -31,13 +31,13 @@
     {
       "media": {"url": "http://www.letelegramme.fr/images/2017/05/07/photo-afp-lionel-bonaventure_3415301_494x330p.jpg","caption": "","credit": "Photo AFP / Lionel Bonaventure","thumb": ""},
       "start_date": {"month": "05","day": "07","year": "2017","hour": "21","minute": "00","second": "00"},
-      "text": {"headline": "","text": "<p>Déclaration officielle d'Emmanuel Macron - QG<br/>media/discours/2017-05-07-ALLOCUTION-EMMANUEL-MACRON.pdf</p>"}     
+      "text": {"headline": "","text": "<p>Déclaration officielle d'Emmanuel Macron - QG<br/>http://6gtem.fr/media/discours/2017-05-07-ALLOCUTION-EMMANUEL-MACRON.pdf</p>"}     
     }
     ,
     {
       "media": {"url": "http://static.lexpress.fr/medias_11474/w_640,c_fill,g_north/macron-louvre-1_5875075.jpeg","caption": "","credit": "France 2","thumb": ""},
       "start_date": {"month": "05","day": "07","year": "2017","hour": "22","minute": "30","second": "00"},
-      "text": {"headline": "","text": "<p>Discours d'E.M. à la pyramide du Louvre<br/>media/discours/2017-05-07-DISCOURS-LOUVRE-EMMANUEL-MACRON.pdf</p>"}     
+      "text": {"headline": "","text": "<p>Discours d'E.M. à la pyramide du Louvre<br/>http://6gtem.fr/media/discours/2017-05-07-DISCOURS-LOUVRE-EMMANUEL-MACRON.pdf</p>"}     
     },
     {
       "media": {"url": "http://i.f1g.fr/media/figaro/805x453/2017/05/08/XVM3175bdbc-33d1-11e7-9d3a-591a0cf12696-805x453.jpg","caption": "","credit": "Crédit Image : STEPHANE DE SAKUTIN / AFP","thumb": ""},
