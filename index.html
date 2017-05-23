@@ -1,124 +1,57 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
+    <title>#6GTEM</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Event Form - TimelineJS</title>
-	
-	<!-- CSS -->
-	<!-- BootStrap-->
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<!-- DateTimePicker -->
-	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/>
+    <meta name="description" content="TimelineJS Embed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- TimelineJS-->
+    <!-- CSS-->
+    <link rel="stylesheet" href="timelinejs/css/timeline.css?v1">
+    <!--FONT-->
+    <link rel="stylesheet" href="timelinejs/css/fonts/font.default.css?v1">
+    <!-- Style-->
+    <style>
+      html, body {
+        height:100%;
+        width:100%;
+        padding: 0px;
+        margin: 0px;
+      }
+      .tl-timeline {
+        
+      }
+      
+    </style>
+    <!-- TimelineJS-->
   </head>
   <body>
 
-    <div class="jumbotron text-center">
-      <h1>Ajout d'un event TimelineJS</h1>
-      <p>Génération d'un JSON avec le nouvel d'après le nouvel événement</p> 
-    </div>
+<!-- countup-->
+  <div id="countup">
+	<div class="part"><div id="d"></div></div>
+	<div class="part"><div id="h"></div></div>
+	<div class="part"><div id="m"></div></div>
+	<div class="part"><div id="s"></div></div>
+  </div>
+<link rel="stylesheet" type="text/css" href="countup/countup.css">
+<script src="countup/progressbar.js"></script>
+<script type="text/javascript" src="countup/countup.js"></script>
+<!-- countup-->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-1">
-                
-            </div>
-            <div class="col-sm-8">
-                <form class="form-horizontal" method="POST" action="/rest/service/customer" data-customer-form>
-
-                    <div class="form-group">
-                        <div class="col-md-4">
-
-                        <textarea name="media" style="display:none;"></textarea>
-                        <textarea name="media.url" style="display:none;" id="ta-url"></textarea>
-                        <textarea name="media.caption" style="display:none;" id="ta-caption"></textarea>
-                        <textarea name="media.credit" style="display:none;" id="ta-credit"></textarea>
-                        <textarea name="media.thumb" style="display:none;" id="ta-thumb"></textarea>
-                        <textarea name="start_date" style="display:none;"></textarea>
-                        <textarea name="start_date.month" style="display:none;" id="ta-month"></textarea>
-                        <textarea name="start_date.day" style="display:none;" id="ta-day"></textarea>
-                        <textarea name="start_date.year" style="display:none;" id="ta-year"></textarea>
-                        <textarea name="start_date.hour" style="display:none;" id="ta-hour"></textarea>
-                        <textarea name="start_date.minute" style="display:none;" id="ta-minute"></textarea>
-                        <textarea name="start_date.second" style="display:none;" id="ta-seconde"></textarea>
-                        <textarea name="text" style="display:none;"></textarea>
-                        <textarea name="text.headline" style="display:none;" id="ta-headline"></textarea>
-                        <textarea name="text.text" style="display:none;" id="ta-text"></textarea>
-
-
-                        <div class="form-group">
-                            <label class="sr-only" for="headline">titre</label>
-                            <input type="text" placeholder="Titre" class="form-control" id="headline" value=""/>
-                        </div>
-
-						<div class="form-group row">
-                            <input type="text" class="form-control" id="datetimepicker" placeholder="date"/>
-                        </div>
-                          <div class="form-group">
-                            <label class="sr-only" for="text">description</label>
-                            <input type="text" placeholder="Description. mettre <p></p>" class="form-control" id="text" value=""/>
-                        </div>
- 
-                        <div class="form-group">
-                            <label class="sr-only" for="url">url</label>
-                            <input type="text" class="form-control" id="url" placeholder="url de la photo" value=""/>
-                        </div>
-                         <div class="form-group">
-                            <label class="sr-only" for="caption">caption</label>
-                            <input type="text" class="form-control" id="caption" placeholder="description de la photo" value=""/>
-                        </div>    
-                         <div class="form-group">
-                            <label class="sr-only" for="credit">credit</label>
-                            <input type="text" class="form-control" id="credit" placeholder="Crédits photo" value=""/>
-                         </div>              
-                        <div class="form-group">
-                            <label class="sr-only" for="thumb">url vignette</label>
-                            <input type="text" class="form-control" placeholder="Url de la vignette" id="thumb" value=""/>
-                        </div>
-			
-                    <input class="btn btn-primary" type="submit" value="SUBMIT" />
-            </form>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-6">
-            <span id='display'>Le fichier json</span>
-        </div>
-    </div>
-</body>
-    <!-- JQuery -->
-    <script src="js/jquery.min.js"></script>
-	<!-- Form2Json -->
-    <script src="js/jquery-form2json.js"></script>
-	<!-- on Submit -->
+<!-- TimelineJS-->
+    <div id="timeline"></div>
+    <!-- JavaScript-->
+    <script src="timelinejs/js/timeline.js"></script>
     <script>
-        jQuery(document).ready(function ($) {
-            $('[data-customer-form]').on('submit', function (e) {
-                e.preventDefault();
-                document.getElementById('ta-url').value = document.getElementById('url').value;
-                document.getElementById('ta-caption').value = document.getElementById('caption').value;
-                document.getElementById('ta-credit').value = document.getElementById('credit').value;
-                document.getElementById('ta-thumb').value = document.getElementById('thumb').value;
-                document.getElementById('ta-month').value = document.getElementById('datetimepicker').value.substring(5,7);
-                document.getElementById('ta-day').value = document.getElementById('datetimepicker').value.substring(8,10);
-                document.getElementById('ta-year').value = document.getElementById('datetimepicker').value.substring(0,4);
-                document.getElementById('ta-hour').value = document.getElementById('datetimepicker').value.substring(11,13);
-				document.getElementById('ta-minute').value = document.getElementById('datetimepicker').value.substring(14,16);
-				document.getElementById('ta-seconde').value = "00";
-				document.getElementById('ta-headline').value = document.getElementById('headline').value;
-                document.getElementById('ta-text').value = document.getElementById('text').value;
-                var json = $(this).formToJson({pretty: true, delimiter: '.'});
-                document.getElementById('display').innerHTML = json;
-            });
-        });
+      var timeline = new TL.Timeline('timeline', 'timelinejs/6gtem.json', {
+        theme_color: "#288EC3",
+        language: "fr"
+      });
     </script>
-	
-	<!-- BootStrap JS -->
-    <script src="js/bootstrap.min.js"></script>
-	<!-- DateTimePicker -->
-	<script src="js/jquery.datetimepicker.full.js"></script>
-	<script>
-	$.datetimepicker.setLocale('fr');
-	$('#datetimepicker').datetimepicker();
-	</script>
+<!-- TimelineJS-->
+
+	</body>
 </html>
