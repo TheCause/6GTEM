@@ -18,72 +18,87 @@
       <h1>Ajout d'un event TimelineJS</h1>
       <p>Génération d'un JSON pour un nouvel événement</p> 
     </div>
-
+    
     <div class="container">
-        <div class="row">
-            <div class="col-sm-1">
-                
-            </div>
-            <div class="col-sm-8">
-                <form class="form-horizontal" method="POST" action="/rest/service/customer" data-customer-form>
+                <form method="POST" action="/rest/service/customer" data-customer-form>
+
+                    <textarea name="media" style="display:none;"></textarea>
+                    <textarea name="media.url" style="display:none;" id="ta-url"></textarea>
+                    <textarea name="media.caption" style="display:none;" id="ta-caption"></textarea>
+                    <textarea name="media.credit" style="display:none;" id="ta-credit"></textarea>
+                    <textarea name="media.thumb" style="display:none;" id="ta-thumb"></textarea>
+                    <textarea name="start_date" style="display:none;"></textarea>
+                    <textarea name="start_date.month" style="display:none;" id="ta-month"></textarea>
+                    <textarea name="start_date.day" style="display:none;" id="ta-day"></textarea>
+                    <textarea name="start_date.year" style="display:none;" id="ta-year"></textarea>
+                    <textarea name="start_date.hour" style="display:none;" id="ta-hour"></textarea>
+                    <textarea name="start_date.minute" style="display:none;" id="ta-minute"></textarea>
+                    <textarea name="start_date.second" style="display:none;" id="ta-seconde"></textarea>
+                    <textarea name="text" style="display:none;"></textarea>
+                    <textarea name="text.headline" style="display:none;" id="ta-headline"></textarea>
+                    <textarea name="text.text" style="display:none;" id="ta-text"></textarea>
+                    
 
                     <div class="form-group">
-                        <div class="col-md-4">
-
-                        <textarea name="media" style="display:none;"></textarea>
-                        <textarea name="media.url" style="display:none;" id="ta-url"></textarea>
-                        <textarea name="media.caption" style="display:none;" id="ta-caption"></textarea>
-                        <textarea name="media.credit" style="display:none;" id="ta-credit"></textarea>
-                        <textarea name="media.thumb" style="display:none;" id="ta-thumb"></textarea>
-                        <textarea name="start_date" style="display:none;"></textarea>
-                        <textarea name="start_date.month" style="display:none;" id="ta-month"></textarea>
-                        <textarea name="start_date.day" style="display:none;" id="ta-day"></textarea>
-                        <textarea name="start_date.year" style="display:none;" id="ta-year"></textarea>
-                        <textarea name="start_date.hour" style="display:none;" id="ta-hour"></textarea>
-                        <textarea name="start_date.minute" style="display:none;" id="ta-minute"></textarea>
-                        <textarea name="start_date.second" style="display:none;" id="ta-seconde"></textarea>
-                        <textarea name="text" style="display:none;"></textarea>
-                        <textarea name="text.headline" style="display:none;" id="ta-headline"></textarea>
-                        <textarea name="text.text" style="display:none;" id="ta-text"></textarea>
-
-
-                        <div class="form-group">
-                            <label class="sr-only" for="headline">titre</label>
-                            <input type="text" placeholder="Titre" class="form-control" id="headline" value=""/>
-                        </div>
-
-						<div class="form-group row">
-                            <input type="text" class="form-control" id="datetimepicker" placeholder="date"/>
-                        </div>
-                          <div class="form-group">
-                            <label class="sr-only" for="text">description</label>
-                            <input type="text" placeholder="Description. mettre <p></p>" class="form-control" id="text" value=""/>
-                        </div>
- 
-                        <div class="form-group">
-                            <label class="sr-only" for="url">url</label>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-6"><input type="text" placeholder="Titre" class="form-control" id="headline" value=""/></div>
+                            <div class="col-md-2"><input type="text" class="form-control" id="datetimepicker" placeholder="date"/></div>
+                            </div>    
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                            <textarea class="form-control" rows="5" id="text" placeholder="Description. markup authorisé"></textarea><br>
+                            </div>   
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
                             <input type="text" class="form-control" id="url" placeholder="url de la photo" value=""/>
+                                </div>
+                            </div>   
                         </div>
-                         <div class="form-group">
-                            <label class="sr-only" for="caption">caption</label>
-                            <input type="text" class="form-control" id="caption" placeholder="description de la photo" value=""/>
-                        </div>    
-                         <div class="form-group">
-                            <label class="sr-only" for="credit">credit</label>
-                            <input type="text" class="form-control" id="credit" placeholder="Crédits photo" value=""/>
-                         </div>              
-                        <div class="form-group">
-                            <label class="sr-only" for="thumb">url vignette</label>
-                            <input type="text" class="form-control" placeholder="Url de la vignette" id="thumb" value=""/>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><input type="text" class="form-control" id="caption" placeholder="description de la photo" value=""/></div>
+                            </div>   
                         </div>
-			
-                    <input class="btn btn-primary" type="submit" value="SUBMIT" />
-            </form>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-6">
-            <span id='display'>Le fichier json</span>
-        </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><input type="text" class="form-control" id="credit" placeholder="Crédits photo" value=""/></div>
+                            </div>   
+                        </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><input type="text" class="form-control" placeholder="Url de la vignette" id="thumb" value=""/></div>
+                            </div>   
+                        </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                            <input class="btn btn-primary" type="submit" value="SUBMIT" />
+                            </div>
+                        </div>
+                </form>
+                    <br>
+                    <center><h3>Fichier Json</h3></center>
+
+                    <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-offset-9"><button id="copyButton">Copier</button></div>
+                            </div>
+                            <br>
+                    <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><textarea class="form-control" rows="20" id='display'></textarea></div>
+                            </div>
     </div>
 </body>
     <!-- JQuery -->
@@ -93,6 +108,65 @@
 	<!-- on Submit -->
     <script>
         jQuery(document).ready(function ($) {
+
+            // Bouton copier
+            document.getElementById("copyButton").addEventListener("click", function() {
+                copyToClipboard(document.getElementById("display"));
+                });
+
+            function copyToClipboard(elem) {
+                  // create hidden text element, if it doesn't already exist
+                var targetId = "_hiddenCopyText_";
+                var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+                var origSelectionStart, origSelectionEnd;
+                if (isInput) {
+                    // can just use the original source element for the selection and copy
+                    target = elem;
+                    origSelectionStart = elem.selectionStart;
+                    origSelectionEnd = elem.selectionEnd;
+                } else {
+                    // must use a temporary form element for the selection and copy
+                    target = document.getElementById(targetId);
+                    if (!target) {
+                        var target = document.createElement("textarea");
+                        target.style.position = "absolute";
+                        target.style.left = "-9999px";
+                        target.style.top = "0";
+                        target.id = targetId;
+                        document.body.appendChild(target);
+                    }
+                    target.textContent = elem.textContent;
+                }
+                // select the content
+                var currentFocus = document.activeElement;
+                target.focus();
+                target.setSelectionRange(0, target.value.length);
+                
+                // copy the selection
+                var succeed;
+                try {
+                      succeed = document.execCommand("copy");
+                } catch(e) {
+                    succeed = false;
+                }
+                // restore original focus
+                if (currentFocus && typeof currentFocus.focus === "function") {
+                    currentFocus.focus();
+                }
+                
+                if (isInput) {
+                    // restore prior selection
+                    elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+                } else {
+                    // clear temporary content
+                    target.textContent = "";
+                }
+                return succeed;
+            };
+
+
+
+            // submit Form2JSON
             $('[data-customer-form]').on('submit', function (e) {
                 e.preventDefault();
                 document.getElementById('ta-url').value = document.getElementById('url').value;
