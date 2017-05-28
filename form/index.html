@@ -85,6 +85,9 @@
                             <div class="col-md-8">
                             <input class="btn btn-primary" type="submit" value="Générer" />
                             <button class="btn btn-primary" id="copyButton">Copier</button>
+                            <button class="btn btn-primary" id="mergeButton">Merge Json</button>
+                            <button class="btn btn-primary" id="sendButton">Send Json</button>
+                            
                             </div>
                         </div>
                 </form>
@@ -95,6 +98,22 @@
                             <div class="col-md-2"></div>
                             <div class="col-md-8"><textarea class="form-control" rows="20" id='display'></textarea></div>
                             </div>
+
+
+                    <center><h3>Fichier Total Json</h3></center>
+
+                    <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><textarea class="form-control" rows="20" id='display-myjson'></textarea></div>
+                            </div>
+
+                    <center><h3>Fichier Total Json</h3></center>
+
+                            <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8"><textarea class="form-control" rows="20" id='display-mergedjson'></textarea></div>
+                            </div>
+
     </div>
 </body>
     <!-- JQuery -->
@@ -104,6 +123,19 @@
 	<!-- on Submit -->
     <script>
         jQuery(document).ready(function ($) {
+            // récupération myjson
+
+            let url = 'https://api.myjson.com/bins/fhb5d';
+            var myjson;
+
+            fetch(url)
+                .then(res => res.json())
+                .then((out) => {
+                    myjson = out;
+                    document.getElementById('display-myjson').innerHTML = JSON.stringify(myjson);
+                    })
+                .catch(err => console.error(err));
+
 
             // Bouton copier
             document.getElementById("copyButton").addEventListener("click", function() {
@@ -160,8 +192,6 @@
                 return succeed;
             };
 
-
-
             // submit Form2JSON
             $('[data-customer-form]').on('submit', function (e) {
                 e.preventDefault();
@@ -179,7 +209,36 @@
                 document.getElementById('ta-text').value = document.getElementById('text').value;
                 var json = $(this).formToJson({pretty: true, delimiter: '.'});
                 document.getElementById('display').innerHTML = json;
-            });
+                display.focus();
+                });
+
+
+                $("#sendButton").click(function () {
+                    var mydata = document.getElementById('display-mergedjson').value
+                    //var data = JSON.stringify(myjson);
+
+                    $.ajax({
+                        url:"https://api.myjson.com/bins/fhb5d",
+                        type:"PUT",
+                        data: mydata,
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success: function(data, textStatus, jqXHR){
+
+                        }
+                    });
+                });   
+
+
+                $("#mergeButton").click(function () {
+                    var JsonItem  = JSON.parse(document.getElementById('display').value);
+                    var JsonTotal  = JSON.parse(document.getElementById('display-myjson').value);
+                    JsonTotal.events.push(JsonItem);
+                    document.getElementById('display-mergedjson').value = JSON.stringify(JsonTotal);
+                    });
+
+
+
         });
     </script>
 	
