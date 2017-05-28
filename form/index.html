@@ -14,11 +14,11 @@
   </head>
   <body>
 
-    <div class="jumbotron text-center">
+    <div id="jumbotronSec" class="jumbotron text-center">
       <h1>Ajout d'un event TimelineJS</h1>
       <p>Génération d'un JSON pour un nouvel événement</p> 
     </div>
-    
+    <br>
     <div class="container">
                 <form method="POST" action="/rest/service/customer" data-customer-form>
 
@@ -87,31 +87,32 @@
                             <button class="btn btn-primary" id="copyButton">Copier</button>
                             <button class="btn btn-primary" id="mergeButton">Merge Json</button>
                             <button class="btn btn-primary" id="sendButton">Send Json</button>
+                            <button class="btn btn-primary" id="clearButton">Clear event</button>
                             
                             </div>
                         </div>
                 </form>
                     <br>
-                    <center><h3>Fichier Json</h3></center>
+                    <center><h3 id="EventJson">Event Json</h3></center>
 
                     <div class="row">
                             <div class="col-md-2"></div>
-                            <div class="col-md-8"><textarea class="form-control" rows="20" id='display'></textarea></div>
+                            <div id="EventJsonRow" class="col-md-8 hide"><textarea class="form-control" rows="20" id='display'></textarea></div>
                             </div>
 
 
-                    <center><h3>Fichier Total Json</h3></center>
+                    <center><h3 id="OriginJson">Origin Json</h3></center>
 
                     <div class="row">
                             <div class="col-md-2"></div>
-                            <div class="col-md-8"><textarea class="form-control" rows="20" id='display-myjson'></textarea></div>
+                            <div id="OriginJsonRow" class="col-md-8 hide"><textarea class="form-control" rows="20" id='display-myjson'></textarea></div>
                             </div>
 
-                    <center><h3>Fichier Total Json</h3></center>
+                    <center><h3 id="Json2Sent">Json to send</h3></center>
 
                             <div class="row">
                             <div class="col-md-2"></div>
-                            <div class="col-md-8"><textarea class="form-control" rows="20" id='display-mergedjson'></textarea></div>
+                            <div id="Json2SentRow" class="col-md-8 hide"><textarea class="form-control" rows="20" id='display-mergedjson'></textarea></div>
                             </div>
 
     </div>
@@ -209,6 +210,7 @@
                 document.getElementById('ta-text').value = document.getElementById('text').value;
                 var json = $(this).formToJson({pretty: true, delimiter: '.'});
                 document.getElementById('display').innerHTML = json;
+                $("#EventJsonRow").removeClass("hide");
                 display.focus();
                 });
 
@@ -227,17 +229,68 @@
 
                         }
                     });
+                    document.getElementById('headline').focus();
                 });   
 
+
+                $("#clearButton").click(function () {
+                document.getElementById('url').value="";
+                document.getElementById('caption').value="";
+                document.getElementById('credit').value="";
+                document.getElementById('thumb').value="";
+                document.getElementById('ta-month').value ="";
+                document.getElementById('ta-day').value ="";
+                document.getElementById('ta-year').value ="";
+                document.getElementById('ta-hour').value ="";
+                document.getElementById('ta-minute').value ="";
+                document.getElementById('ta-seconde').value = "";
+                document.getElementById('headline').value="";
+                document.getElementById('text').value="";
+                document.getElementById('headline').focus();
+                });  
 
                 $("#mergeButton").click(function () {
                     var JsonItem  = JSON.parse(document.getElementById('display').value);
                     var JsonTotal  = JSON.parse(document.getElementById('display-myjson').value);
                     JsonTotal.events.push(JsonItem);
                     document.getElementById('display-mergedjson').value = JSON.stringify(JsonTotal);
+                    $("#EventJsonRow").addClass("hide");
+                    $("#Json2SentRow").removeClass("hide");
+                    display-mergedjson.focus();
+                    });
+
+                $("#EventJson").click(function() {
+                    if($("#EventJsonRow").hasClass("hide")) {
+                        $("#EventJsonRow").removeClass("hide");
+                    } else {
+                        $("#EventJsonRow").addClass("hide");
+                        }    
+                    });
+
+                $("#OriginJson").click(function() {
+                    if($("#OriginJsonRow").hasClass("hide")) {
+                        $("#OriginJsonRow").removeClass("hide");
+                    } else {
+                        $("#OriginJsonRow").addClass("hide");
+                        }
+                    });
+
+                $("#Json2Sent").click(function() {
+                    if($("#Json2SentRow").hasClass("hide")) {
+                        $("#Json2SentRow").removeClass("hide");
+                    } else {
+                        $("#Json2SentRow").addClass("hide");
+                        }
                     });
 
 
+                $("#jumbotronSec").click(function() {
+                    if($("#jumbotronSec").hasClass("hide")) {
+                        $("#jumbotronSec").removeClass("hide");
+                    } else {
+                        $("#jumbotronSec").addClass("hide");
+                        }
+                    });
 
         });
     </script>
