@@ -40,7 +40,7 @@ setInterval(function() {
     difference = (now-countTo);
     var second = Math.floor((((difference%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
     seconds.animate(second / 60, function() {
-        seconds.setText("<span class=\"number\">" + second + "</span>" + "<span class=\"label\">Secondes</span>");
+        seconds.setText("<span class=\"number\">" + second + "</span>" + "<span class=\"labelcu\">Secondes</span>");
     });
 }, 1000);
 setInterval(function() {
@@ -49,7 +49,7 @@ setInterval(function() {
     difference = (now-countTo);
     var minute = Math.floor(((difference%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
     minutes.animate(minute / 60, function() {
-        minutes.setText("<span class=\"number\">" + minute + "</span>" + "<span class=\"label\">Minutes</span>");
+        minutes.setText("<span class=\"number\">" + minute + "</span>" + "<span class=\"labelcu\">Minutes</span>");
     });
 }, 1000);
 setInterval(function() {
@@ -58,7 +58,7 @@ setInterval(function() {
     difference = (now-countTo);
     var hour = Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
     hours.animate(hour / 24, function() {
-        hours.setText("<span class=\"number\">" + hour + "</span>" + "<span class=\"label\">Heures</span>");
+        hours.setText("<span class=\"number\">" + hour + "</span>" + "<span class=\"labelcu\">Heures</span>");
     });
 }, 1000);
 setInterval(function() {
@@ -67,6 +67,6 @@ setInterval(function() {
     difference = (now-countTo);
     var day = Math.floor(difference/(60*60*1000*24)*1);
     days.animate(day / (day + 5), function() {
-        days.setText("<span class=\"number\">" + day + "</span>" + "<span class=\"label\">Jours</span>");
+        days.setText("<span class=\"number\">" + day + "</span>" + "<span class=\"labelcu\">Jours</span>");
     });
 }, 1000);
